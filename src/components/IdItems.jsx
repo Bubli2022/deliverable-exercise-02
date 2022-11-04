@@ -9,10 +9,9 @@ const IdItems = ({ id }) => {
   }, []);
   console.log(item);
   return (
-    <div>
-      <li>{item.name}</li>
-      <img src={item.image} alt="" />
-      <li>
+    <li className="item">
+      <div className="card">
+        <img src={item.image} alt="" /> <p className="name">{item.name}</p>
         <i
           class="fa-solid fa-circle fa-2xs"
           style={{
@@ -25,11 +24,11 @@ const IdItems = ({ id }) => {
           }}
         ></i>{" "}
         {item.status} - {item.species}
-      </li>
-      <li>origin: </li>
-      {item.origin?.name}
-      <li>episodes where appear: </li> {item.episode?.length}
-    </div>
+        <p className="description">origin:</p> {item.origin?.name}
+        <p className="description">episodes where appear:</p>{" "}
+        {item.episode?.length}
+      </div>
+    </li>
   );
 };
 

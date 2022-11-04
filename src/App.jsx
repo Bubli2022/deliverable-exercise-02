@@ -21,34 +21,37 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="container-1"></div>
-      <hr />
-      <h3>{id.name}</h3>
-      <span>
-        {" "}
-        <b>type:</b>{" "}
-      </span>
-      {id.type}{" "}
-      <span>
-        {" "}
-        <b>dimension:</b>
-      </span>{" "}
-      {id.dimension}{" "}
-      <span>
-        <b>population: </b>
-      </span>{" "}
-      {id.residents?.length}
-      <br />
+      <div className="banner"></div>
+      <h1>Rick and Morty Wiki</h1>
       <input
         type="text"
         value={typeId}
         onChange={(e) => setTypeId(e.target.value)}
       />
-      <button onClick={searchType}>Search</button> <br />
-      {typeId}
-      {id.residents?.map((id) => (
-        <IdItems id={id} key={id} />
-      ))}
+      <button className="btn" onClick={searchType}>
+        Search
+      </button>{" "}
+      <br />
+      <h2 className="info-location">{id.name}</h2>
+      <br />
+      <div className="information">
+        <span>
+          <b>type:</b> {id.type}
+        </span>
+        <span>
+          <b>dimension:</b> {id.dimension}
+        </span>
+        <span>
+          <b>population: </b> {id.residents?.length}
+        </span>
+      </div>
+      <br />
+      <h3 className="title-2">Residents</h3>
+      <ul className="container">
+        {id.residents?.map((id) => (
+          <IdItems id={id} key={id} />
+        ))}
+      </ul>
     </div>
   );
 }
