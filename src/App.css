@@ -25,6 +25,9 @@ h3 {
    text-align: center;
    padding: 70px;
    width: 100vw;
+}
+
+.loader {
    display: flex;
    justify-content: center;
    align-items: center;
