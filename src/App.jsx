@@ -32,14 +32,15 @@ function App() {
    return (
       <div className="App">
          {loading ? (
-            <MoonLoader
-               className="loader"
-               color={"#ff5e00"}
-               loading={loading}
-               size={50}
-               aria-label="Loading Spinner"
-               data-testid="loader"
-            />
+            <div className="loader">
+               <MoonLoader
+                  color={"#ff5e00"}
+                  loading={loading}
+                  size={50}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+               />
+            </div>
          ) : (
             <div>
                {" "}
